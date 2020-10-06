@@ -9,4 +9,8 @@ describe Account do
     expect(subject.deposit(10)).to eq(10)
   end
 
+  it 'allows a user to withdraw funds' do
+    expect(subject.withdraw(10)).to eq(-10)
+  end
+
 end
