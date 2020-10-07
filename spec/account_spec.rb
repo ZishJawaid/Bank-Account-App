@@ -6,8 +6,16 @@ describe Account do
     expect(subject).to be_an_instance_of (Account)
   end
 
-  it 'allows a user to deposit funds' do
-    expect(subject.deposit(10)).to eq(10)
+  describe '#deposit' do
+
+    it 'allows a user to deposit funds' do
+      expect(subject.deposit(10)).to eq(10)
+    end
+
+    it 'raises an error if the amount deposited is negative' do
+      expect {subject.deposit(-100) }.to raise_error("Please deposit a positive amount")
+    end
+  
   end
 
   describe '#withdraw' do

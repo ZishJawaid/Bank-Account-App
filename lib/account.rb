@@ -9,6 +9,7 @@ class Account
   end
   
   def deposit(amount)
+    raise "Please deposit a positive amount" if amount.negative?
 
     @balance += amount
   
