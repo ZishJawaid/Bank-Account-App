@@ -8,10 +8,6 @@ describe Account do
 
   describe '#deposit' do
 
-    it 'allows a user to deposit funds' do
-      expect(subject.deposit(10)).to eq(10)
-    end
-
     it 'raises an error if the amount deposited is negative' do
       expect {subject.deposit(-100) }.to raise_error("Please deposit a positive amount")
     end
@@ -21,10 +17,6 @@ describe Account do
   describe '#withdraw' do
     let(:account) { Account.new(100) }
     
-    it 'allows a user to withdraw funds' do
-      expect(account.withdraw(10)).to eq(90)
-    end
-
     it 'raises an error if withdrawal amount is greater than balance' do
       expect { account.withdraw(101) }.to raise_error("Balance has been exceeded. Please withdraw a smaller amount")
     end
