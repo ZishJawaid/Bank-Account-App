@@ -17,6 +17,7 @@ class Account
 
   def withdraw(amount)
     raise "Balance has been exceeded. Please withdraw a smaller amount" if balance_exceeded?(amount)
+    raise "Please withdraw a positive amount" if amount.negative?
 
     @balance -= amount
 

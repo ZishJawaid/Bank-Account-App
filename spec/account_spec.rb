@@ -28,6 +28,10 @@ describe Account do
     it 'raises an error if withdrawal amount is greater than balance' do
       expect { account.withdraw(101) }.to raise_error("Balance has been exceeded. Please withdraw a smaller amount")
     end
+    
+    it 'raises an error if the amount withdrawn is negative' do
+      expect {subject.withdraw(-100) }.to raise_error("Please withdraw a positive amount")
+    end
 
   end
 
