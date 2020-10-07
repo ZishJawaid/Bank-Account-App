@@ -15,10 +15,16 @@ class Account
   end
 
   def withdraw(amount)
-    raise "Balance has been exceeded. Please withdraw a smaller amount" if amount > @balance
+    raise "Balance has been exceeded. Please withdraw a smaller amount" if balance_exceeded?(amount)
 
     @balance -= amount
 
+  end
+
+  private
+
+  def balance_exceeded?(amount)
+     amount > @balance
   end
 
 end
