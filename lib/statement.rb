@@ -12,6 +12,8 @@ class Statement
     
   end
 
+  private
+  
   def header
     "date || credit || debit || balance"
   end

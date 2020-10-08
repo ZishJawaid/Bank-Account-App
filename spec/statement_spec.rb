@@ -4,10 +4,6 @@ describe Statement do
   let(:date) { Time.new.strftime("%d/%m/%Y") }
   let(:account) { Account.new }
 
-  it 'prints the account statement header' do
-    expect(subject.header).to eq("date || credit || debit || balance")
-  end
-
   it 'prints out a full statement with multiple transactions' do
     account.deposit(1000)
     account.withdraw(500)
