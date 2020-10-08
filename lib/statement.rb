@@ -2,16 +2,14 @@ require_relative 'account.rb'
 
 class Statement
 
-  def print(transaction_log = false)
+  def print(transaction_log)
     
-    if transaction_log
-      array = transaction_log.map { |log| log.join(" || ")}
-      statement = array.reverse.join("\n ")
-      puts statement
-      statement
-    else
-      header
-    end
+      transactions = transaction_log.map { |log| log.join(" || ")}
+      statement = transactions.reverse.join("\n ")
+      full_statement = "#{header}\n #{statement}"
+      puts full_statement
+      full_statement
+    
   end
 
   def header
