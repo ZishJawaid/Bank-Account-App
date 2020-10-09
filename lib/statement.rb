@@ -9,8 +9,7 @@ class Statement
       statement = transactions.reverse.join("\n ")
       full_statement = "#{header}\n #{statement}"
       puts full_statement
-      full_statement
-    
+          
   end
 
   private

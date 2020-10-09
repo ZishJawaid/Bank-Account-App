@@ -27,16 +27,5 @@ describe Account do
 
   end
 
-  describe '#transaction_log' do
-       
-    it 'logs the transactions' do
-      date = Time.new.strftime("%d/%m/%Y")
-      account = Account.new
-      account.deposit(1000)
-      account.withdraw(500)
-      
-      expect(account.transaction_log).to eq ([[date, 1000, nil, 1000], [date, nil, 500, 500]])
-    end
-  end
-
+ 
 end
