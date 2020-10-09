@@ -1,4 +1,5 @@
-require_relative 'account.rb'
+require_relative 'account'
+require_relative 'transactions'
 
 class Statement
 
@@ -13,7 +14,7 @@ class Statement
   end
 
   private
-  
+
   def header
     "date || credit || debit || balance"
   end

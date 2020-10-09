@@ -12,7 +12,6 @@ class Account
   def deposit(amount, date = Time.new.strftime("%d/%m/%Y"))
     raise "Please deposit a positive amount" if amount.negative?
     @balance += amount
-    @transaction_log << [date, amount, nil, balance]
   
   end
 
@@ -20,7 +19,6 @@ class Account
     raise "Balance has been exceeded. Please withdraw a smaller amount" if balance_exceeded?(amount)
     raise "Please withdraw a positive amount" if amount.negative?
     @balance -= amount
-    @transaction_log << [date, nil, amount, balance] 
 
   end
 
