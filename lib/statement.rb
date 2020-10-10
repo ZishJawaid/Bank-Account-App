@@ -5,10 +5,10 @@ class Statement
 
   def print(transaction_log)
     
-      transactions = transaction_log.map { |log| log.join(" || ")}
-      statement = transactions.reverse.join("\n ")
-      full_statement = "#{header}\n #{statement}"
-      puts full_statement
+    transactions = transaction_log.map { |log| log.join(" || ") }
+    statement = transactions.reverse.join("\n ")
+    full_statement = "#{header}\n #{statement}"
+    puts full_statement
           
   end
 
@@ -18,5 +18,3 @@ class Statement
     "date || credit || debit || balance"
   end
 end
-
-
